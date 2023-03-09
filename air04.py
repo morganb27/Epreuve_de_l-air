@@ -1,22 +1,19 @@
 import sys
 
-
-
 def supprimer_caracteres_identiques_adjacents():
-    i = 0
-    str = sys.argv[1]
+    s = sys.argv[1]
+    result = ""
+    last_char = None
 
-        while i < (len(str) - 1):
-            if str[i] != str[i+1] and str[i] != " ":
-                print(str[i], end = "")
-                i = i + 1
+    for i in range(len(s)):
+        if s[i] != last_char:
+            result += s[i]
+            last_char = s[i]
 
-            if str[i] == " ":
-                print(" ", end="")
+    return result
 
-            else:
-                i = i + 1
-
-    print(str[-1], end = " ")
-
-supprimer_caracteres_identiques_adjacents()
+if len(sys.argv) < 2:
+    print("Veuillez fournir une chaîne de caractères en argument.")
+else:
+    result = supprimer_caracteres_identiques_adjacents()
+    print(result)

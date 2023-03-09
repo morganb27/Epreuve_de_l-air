@@ -11,4 +11,4 @@ def ma_rotation(array):
     return new_array
 
 resultat = ma_rotation(sys.argv[1:])
-print(", ".join(resultat))
+print(", ".join(map(str, resultat)))

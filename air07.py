@@ -17,6 +17,5 @@ def insertion_dans_un_tableau_trie(lst, new_element):
 
     return lst
 
-result = insertion_dans_un_tableau_trie(sys.argv[1:], sys.argv[-1])
-for element in result[:-1]:
-    print(element, end=" ")
+result = insertion_dans_un_tableau_trie(sys.argv[1:-1], sys.argv[-1])
+print(" ".join(result))
